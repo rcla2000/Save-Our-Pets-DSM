@@ -15,7 +15,7 @@ Alumno - carnet - grupo teórico
 
 ## Link de Trello: Tablero Kanban
 
-https://trello.com/b/SiiKk37W/tablero-kanban-sop
+https://trello.com/b/rc3TdnIq
 
 ## Link Diseño UI/UX mockups
 
