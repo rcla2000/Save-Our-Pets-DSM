@@ -1,6 +1,6 @@
 # Save Our Pets
 
-Save Our Pets es una aplicación móvil desarrollada con el lenguaje de programación Kotlin para las ONG encargadas del rescate de animales (gatos, perros) callejeros que se encuentran en condiciones precarias y si un dueño. La app permite facilitar el registro de información de animales, personas interesadas en adoptar, datos sobre vacunación, registro de adopciones entre otros aspectos.
+Save Our Pets es una aplicación móvil desarrollada con el lenguaje de programación Kotlin para las ONG encargadas del rescate de animales (gatos, perros) callejeros que se encuentran en condiciones precarias y si un dueño. La app permite facilitar el registro de información de animales, personas interesadas en adoptar, datos sobre vacunación, registro de adopciones entre otros aspectos que haran que el manejo de la informacion y las actividades que se realicen en la aplicacion sean intuitivas.
 
 Dicha aplicación es compatible para móviles con sistemas operativos Android.
 
@@ -35,7 +35,7 @@ Para sistema operativo Windows:
 
 ### Pasos para ejecutar el proyecto
 
-Clone el proyecto a un repositorio local en su computadora, abra la carpeta creada desde Android Studio y realice un **build** al proyecto, descargará todos los paquetes que se están usando.
+Clone el proyecto a un repositorio local en su computadora, abra la carpeta creada desde Android Studio y realice un **build** al proyecto, descargará todos los paquetes que se están usando es importante contar con los requisitos antes mencionados para poder ejecutar el proyecto.
 
 Para probar la aplicación en un dispositivo Android real, conecte el smartphone a la computadora por medio de un cable USB.
 Active las opciones de desarrollador del dispositivo móvil. Una vez activadas busque la opción: **Depuración por USB** y actívela. Cuando haya hecho todo esto se mostrará en la ventana de Android Studio en los dispositivos disponibles el smartphone que ha conectado, proceda a ejecutar el proyecto.
