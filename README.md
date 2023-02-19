@@ -15,17 +15,7 @@ Alumno - carnet - grupo teórico
 
 ## Link de Trello: Tablero Kanban
 
-https://trello.com/b/SiiKk37W/tablero-kanban-sop
-
-## Link Diseño UI/UX mockups
-
-https://drive.google.com/drive/folders/1ySkq1ntdTAh6eoN-L_TYJm686BLZpQdB
-
-## Link manual de Usuario
-https://github.com/Ernest00/Save-Our-Pets-React/blob/main/Manual%20de%20usuario.pdf
-
-## Link manual técnico
-https://github.com/Ernest00/Save-Our-Pets-React/blob/main/Manual_Tecnico_DPS.pdf
+https://trello.com/b/rc3TdnIq
 
 ## Licencia Creative Commons
 La licencia utilizada es: **CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.**
@@ -41,17 +31,16 @@ Para sistema operativo Windows:
 
 * Java Development Kit (JDK) instalada en su versión 11
 * Android Studio
-* Visual Studio Code
+* Dispositivo virtual o un dispositivo Android físico.
 
 ### Pasos para ejecutar el proyecto
 
-Clone el proyecto a un repositorio local en su computadora, acceda a la carpeta donde lo descargó y ejecute el comando:
-`npm install` para descargar todas las dependencias requeridas para el correcto funcionamiento.
+Clone el proyecto a un repositorio local en su computadora, abra la carpeta creada desde Android Studio y realice un **build** al proyecto, descargará todos los paquetes que se están usando.
 
 Para probar la aplicación en un dispositivo Android real, conecte el smartphone a la computadora por medio de un cable USB.
-Active las opciones de desarrollador del dispositivo móvil. Una vez activadas busque la opción: **Depuración por USB** y actívela. Cuando haya hecho todo esto ejecute el comando `npm run android` y espere hasta que el proyecto se termine de preparar, puede ver el detalle en la consola de comandos de su ordenador. Cuando el proyecto esté listo podrá visualizar la aplicación en su móvil.
+Active las opciones de desarrollador del dispositivo móvil. Una vez activadas busque la opción: **Depuración por USB** y actívela. Cuando haya hecho todo esto se mostrará en la ventana de Android Studio en los dispositivos disponibles el smartphone que ha conectado, proceda a ejecutar el proyecto.
 
-Para probar la aplicación usando AVD de Android Studio simplemente use el comando `npm run android` y se prepará el proyecto, una vez
+Para probar la aplicación usando AVD de Android Studio simplemente seleccione el dispositivo y ejecute el proyecto, una vez
 esté listo automáticamente se mostrará el dispositivo Android emulado en su computadora junto con la aplicación. Nota: para que este método
 funcione considere que previamente tuvo que haber creado un dispositivo android virtual dentro de Android Studio. 
 
