@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/adaptive_icon"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/gif_splash"
+        app:layout_constraintBottom_toTopOf="@+id/imgIcon"
+        android:layout_below="@id/imgIcon"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gifImageView"
+        android:layout_centerInParent="true"
+        android:textSize="25dp"
+        android:textColor="@color/white_Default"
+        android:text="@string/app_name"
+        android:fontFamily="@font/alkatra_variablefont"
+        />
+
+
+</RelativeLayout>

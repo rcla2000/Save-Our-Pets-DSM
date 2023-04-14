@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Save Our Pets</string>
+    <string name="btnPrueba">1 English</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="iniciarSesion">Log In</string>
+    <string name="btnLogin">Log In</string>
+    <string name="textUser">User</string>
+    <string name="textPass">Password</string>
+    <string name="swipeReporte">Swipe left to send report</string>
+    <string name="registrar">Register</string>
+    <string name="report_indication">Fill in the information so we can find the pet</string>
+    <string name="btnEnviar">Send</string>
+    <string name="swipeLogin">Swipe right to login</string>
+    <string name="reporte">Report</string>
+</resources>
