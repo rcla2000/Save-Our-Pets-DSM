@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
         )
         pagerAdapter.addFragmet(LoginFragment())
-        //pagerAdapter.addFragmet(RegisterFragment())
+        pagerAdapter.addFragmet(ReportFragment())
         viewPager.adapter = pagerAdapter
     }
 

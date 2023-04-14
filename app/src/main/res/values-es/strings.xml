@@ -6,5 +6,10 @@
     <string name="btnLogin">Acceder</string>
     <string name="textUser">Usuario</string>
     <string name="textPass">Contraseña</string>
-    <string name="textReporte">Desliza a la izquierda para registrarte</string>
+    <string name="swipeReporte">Desliza a la izquierda para enviar reportes</string>
+    <string name="registrar">Registrar</string>
+    <string name="report_indication">Llena la información para que podemos encontrar a la mascota</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="swipeLogin">Desliza a la derecha para iniciar sesión</string>
+    <string name="reporte">Reporte</string>
 </resources>

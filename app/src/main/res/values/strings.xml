@@ -8,5 +8,10 @@
     <string name="btnLogin">Log In</string>
     <string name="textUser">User</string>
     <string name="textPass">Password</string>
-    <string name="textReporte">Swipe left to send report</string>
+    <string name="swipeReporte">Swipe left to send report</string>
+    <string name="registrar">Register</string>
+    <string name="report_indication">Fill in the information so we can find the pet</string>
+    <string name="btnEnviar">Send</string>
+    <string name="swipeLogin">Swipe right to login</string>
+    <string name="reporte">Report</string>
 </resources>
