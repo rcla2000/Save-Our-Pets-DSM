@@ -1,4 +1,5 @@
-import android.R
+package org.app.saveourpets
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

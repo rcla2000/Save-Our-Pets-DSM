@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">Save Our Pets</string>
     <string name="btnPrueba">2 Spanish</string>
+    <string name="iniciarSesion">Iniciar Sesion</string>
+    <string name="btnLogin">Acceder</string>
+    <string name="textUser">Usuario</string>
+    <string name="textPass">Contraseña</string>
+    <string name="textReporte">Desliza a la izquierda para registrarte</string>
 </resources>
