@@ -20,4 +20,11 @@
         <item name="backgroundColor">@color/blue_200</item>
         <item name="android:windowBackground">@color/blue_200</item>
     </style>
+
+    <style name="Theme.SaveOurPets.NoActionBar.Admin">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="backgroundColor">@color/white_Default</item>
+        <item name="android:windowBackground">@color/blue_200</item>
+    </style>
 </resources>
