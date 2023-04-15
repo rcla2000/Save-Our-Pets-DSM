@@ -12,5 +12,9 @@
     <string name="btnEnviar">Enviar</string>
     <string name="swipeLogin">Desliza a la derecha para iniciar sesión</string>
     <string name="reporte">Reporte</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Videoshow</string>
     <string name="textBienvenida">Bienvenido</string>
+    <string name="menu_species">Especies</string>
 </resources>

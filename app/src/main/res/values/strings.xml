@@ -26,4 +26,5 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="textBienvenida">Welcome</string>
+    <string name="menu_species">Species</string>
 </resources>
