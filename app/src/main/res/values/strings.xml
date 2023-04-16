@@ -6,6 +6,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="iniciarSesion">Log In</string>
     <string name="btnLogin">Log In</string>
+    <string name="btnFacebook">Continue with Facebook</string>
     <string name="textUser">User</string>
     <string name="textPass">Password</string>
     <string name="swipeReporte">Swipe left to send report</string>
@@ -27,4 +28,8 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="textBienvenida">Welcome</string>
     <string name="menu_species">Species</string>
+
+    <string name="facebook_app_id">188034237374789</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">188034237374789</string>
 </resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "654586639425",
+    "project_id": "save-our-pets-ce387",
+    "storage_bucket": "save-our-pets-ce387.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654586639425:android:d4058f161910fd6cbf02c0",
+        "android_client_info": {
+          "package_name": "org.app.saveourpets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654586639425-8agdob4lsiqea4qlb36b29rnb7nltv26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkfvcbCF6SjoPFS-LSc4vRgwT_yMwE-cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654586639425-8agdob4lsiqea4qlb36b29rnb7nltv26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
