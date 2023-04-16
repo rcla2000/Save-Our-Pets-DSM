@@ -17,4 +17,6 @@
     <string name="menu_slideshow">Videoshow</string>
     <string name="textBienvenida">Bienvenido</string>
     <string name="menu_species">Especies</string>
+    <string name="menu_razas">Razas</string>
+    <string name="menu_vacunas">Vacunas</string>
 </resources>

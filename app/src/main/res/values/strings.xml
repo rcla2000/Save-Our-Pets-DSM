@@ -27,4 +27,6 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="textBienvenida">Welcome</string>
     <string name="menu_species">Species</string>
+    <string name="menu_razas">Races</string>
+    <string name="menu_vacunas">Vaccines</string>
 </resources>

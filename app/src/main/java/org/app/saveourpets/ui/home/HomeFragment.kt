@@ -11,8 +11,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import org.app.saveourpets.databinding.FragmentHomeBinding
-import org.app.saveourpets.datos.Especies
-import org.app.saveourpets.datos.EspeciesApi
+import org.app.saveourpets.datos.ClientAPI
+import org.app.saveourpets.datos.Especie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,12 +49,12 @@ class HomeFragment : Fragment() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val especiesApi = retrofit.create(EspeciesApi::class.java)
+        val especiesApi = retrofit.create(ClientAPI::class.java)
 
-        especiesApi.obtenerEspecies().enqueue(object : Callback<List<Especies>> {
+        especiesApi.getEspecies().enqueue(object : Callback<List<Especie>> {
             override fun onResponse(
-                call: Call<List<Especies>>,
-                response: Response<List<Especies>>
+                call: Call<List<Especie>>,
+                response: Response<List<Especie>>
             ) {
                 if (response.isSuccessful) {
                     Log.d(TAG, "Entramo")
@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Especies>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Especie>>, t: Throwable) {
                 // manejar el error
                 Log.d(TAG, "Error mi chuchito ${t.toString()}")
             }
