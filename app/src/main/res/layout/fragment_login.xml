@@ -58,6 +58,7 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -70,6 +71,21 @@
             android:text="@string/btnLogin"
             android:backgroundTint="@color/red_Default"
             android:textColor="@android:color/white" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btn_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/btnFacebook"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="MissingConstraints" />
+
+
 
         <ImageView
             android:layout_width="30dp"
