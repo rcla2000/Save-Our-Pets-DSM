@@ -12,5 +12,15 @@
     <string name="btnEnviar">Enviar</string>
     <string name="swipeLogin">Desliza a la derecha para iniciar sesión</string>
     <string name="reporte">Reporte</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Videoshow</string>
     <string name="textBienvenida">Bienvenido</string>
+    <string name="menu_species">Especies</string>
+    <string name="menu_razas">Razas</string>
+    <string name="menu_vacunas">Vacunas</string>
+    <string name="btnFacebook">Continuar con Facebook</string>
+    <string name="facebook_app_id">188034237374789</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">188034237374789</string>
 </resources>
