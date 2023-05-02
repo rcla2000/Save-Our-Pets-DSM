@@ -9,12 +9,18 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_species"
+            android:icon="@drawable/species_icon"
+            android:title="@string/menu_species" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_razas"
+            android:icon="@drawable/catdog_icon"
+            android:title="@string/menu_razas" />
+
+        <item
+            android:id="@+id/nav_vacunas"
+            android:icon="@drawable/vacuna_icon"
+            android:title="@string/menu_vacunas" />
     </group>
 </menu>

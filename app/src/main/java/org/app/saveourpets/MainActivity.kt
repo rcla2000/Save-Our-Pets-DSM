@@ -1,5 +1,6 @@
 package org.app.saveourpets
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -22,6 +23,14 @@ class MainActivity : AppCompatActivity() {
         pagerAdapter.addFragmet(LoginFragment())
         pagerAdapter.addFragmet(ReportFragment())
         viewPager.adapter = pagerAdapter
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        for (fragment in supportFragmentManager.fragments) {
+            //System.out.println("@#@");
+            fragment.onActivityResult(requestCode, resultCode, data)
+        }
     }
 
 
