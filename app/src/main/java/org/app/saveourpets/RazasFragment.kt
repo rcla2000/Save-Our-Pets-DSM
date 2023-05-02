@@ -59,13 +59,6 @@ class RazasFragment : Fragment() {
 
         val fab = view.findViewById<FloatingActionButton>(R.id.fab)
 
-// Define la acción del FAB
-        fab.setOnClickListener {
-            Snackbar.make(view, "Clic en Razas WAZAA", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
-
         return view
     }
 
