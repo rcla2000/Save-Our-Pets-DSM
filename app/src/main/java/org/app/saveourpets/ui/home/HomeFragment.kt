@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import org.app.saveourpets.databinding.FragmentHomeBinding
 import org.app.saveourpets.datos.ClientAPI
-import org.app.saveourpets.datos.Especie
+import org.app.saveourpets.especies.Especie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
 
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://saveourpets.probalosv.com/api/")
+            .baseUrl("http://192.168.0.4/api-save-our-pets/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

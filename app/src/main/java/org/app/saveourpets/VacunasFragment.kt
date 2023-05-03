@@ -72,7 +72,7 @@ class VacunasFragment : Fragment() {
     private fun llenarListado() {
         // Crea una instancia de Retrofit con el cliente OkHttpClient
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://saveourpets.probalosv.com/api/")
+            .baseUrl("http://192.168.0.4/api-save-our-pets/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

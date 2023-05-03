@@ -20,6 +20,7 @@ import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.facebook.appevents.AppEventsLogger
+import org.app.saveourpets.especies.ListarEspeciesActivity
 
 
 class LoginFragment : Fragment() {
@@ -46,7 +47,7 @@ class LoginFragment : Fragment() {
 
         val button = view.findViewById<Button>(R.id.btn_login)
         button.setOnClickListener {
-            val intent = Intent(activity, AdminActivity::class.java)
+            val intent = Intent(activity, ListarEspeciesActivity::class.java)
             startActivity(intent)
         }
         return view

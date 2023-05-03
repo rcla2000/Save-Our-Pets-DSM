@@ -34,4 +34,17 @@
     <string name="facebook_app_id">188034237374789</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">188034237374789</string>
+    <string name="btn_actualizar">Update</string>
+    <string name="btn_eliminar">Delete</string>
+    <string name="btn_agregar">Save</string>
+    <string name="txt_nombre">Name</string>
+    <string name="txt_agregar_especie">Add species</string>
+    <string name="txt_actualizar_especie">Update specie</string>
+
+    <string name="info_especie">Specie added successfully</string>
+    <string name="info_actualizar_especie">Specie updated successfully</string>
+
+    <string name="error_nombre_especie">Enter the species name</string>
+    <string name="error_especie">An error occurred when try to save the specie</string>
+    <string name="error_actualizar_especie">An error occurred when try to update the specie</string>
 </resources>

@@ -10,8 +10,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import org.app.saveourpets.datos.*
+import org.app.saveourpets.especies.Especie
+import org.app.saveourpets.especies.EspecieAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -52,17 +53,9 @@ class EspeciesFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.list_Especies)
         recyclerView.layoutManager = LinearLayoutManager(context)
-
         llenarListado()
 
-
-
-
         val fab = view.findViewById<FloatingActionButton>(R.id.fab)
-
-// Define la acción del FAB
-
-
         return view
     }
 
@@ -70,7 +63,7 @@ class EspeciesFragment : Fragment() {
     fun llenarListado(){
         // Crea una instancia de Retrofit con el cliente OkHttpClient
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://saveourpets.probalosv.com/api/")
+            .baseUrl("http://192.168.0.4/api-save-our-pets/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -81,27 +74,27 @@ class EspeciesFragment : Fragment() {
         call.enqueue(object : Callback<List<Especie>> {
             override fun onResponse(call: Call<List<Especie>>, response: Response<List<Especie>>) {
                 if (response.isSuccessful) {
-                    val alumnos = response.body()
-                    if (alumnos != null) {
-                        adapter = EspecieAdapter(alumnos)
+                    val especies = response.body()
+                    if (especies != null) {
+                        adapter = EspecieAdapter(especies)
                         recyclerView.adapter = adapter
                     }
                 } else {
                     val error = response.errorBody()?.string()
-                    Log.e("API", "Error al obtener los alumnos: $error")
+                    Log.e("API", "Error al obtener las especies: $error")
                     Toast.makeText(
                         context,
-                        "Error al obtener los alumnos 1",
+                        "Error al obtener las especies",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
             }
 
             override fun onFailure(call: Call<List<Especie>>, t: Throwable) {
-                Log.e("API", "Error al obtener los alumnos: ${t.message}")
+                Log.e("API", "Error al obtener las especies: ${t.message}")
                 Toast.makeText(
                     context,
-                    "Error al obtener los alumnos 2",
+                    "Error al obtener las especies",
                     Toast.LENGTH_SHORT
                 ).show()
             }
