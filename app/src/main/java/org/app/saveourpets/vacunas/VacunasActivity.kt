@@ -1,9 +1,8 @@
-package org.app.saveourpets.especies
+package org.app.saveourpets.vacunas
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,21 +16,20 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ListarEspeciesActivity : AppCompatActivity() {
+class VacunasActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: EspecieAdapter
+    private lateinit var adapter: VacunaAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listar_especies)
-        val btnAgregar : FloatingActionButton = findViewById<FloatingActionButton>(R.id.btnAgregarEspecie)
+        setContentView(R.layout.activity_vacunas)
+        val btnAgregar : FloatingActionButton = findViewById<FloatingActionButton>(R.id.btnAgregarVacuna)
 
         btnAgregar.setOnClickListener {
-            val intent = Intent(this, AgregarEspecieActivity::class.java)
+            val intent = Intent(this, AgregarVacunaActivity::class.java)
             startActivity(intent)
             finish()
         }
-        listarEspecies()
     }
 
     private fun crearDialogo() : AlertDialog.Builder {
@@ -44,8 +42,8 @@ class ListarEspeciesActivity : AppCompatActivity() {
         return builder
     }
 
-    private fun listarEspecies() {
-        recyclerView = findViewById(R.id.recyclerViewEspecie)
+    private fun listarVacunas() {
+        recyclerView = findViewById(R.id.recyclerViewVacunas)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val builder = crearDialogo()
 
@@ -56,45 +54,47 @@ class ListarEspeciesActivity : AppCompatActivity() {
 
         // Crea una instancia del servicio que utiliza la autenticación HTTP básica
         val api = retrofit.create(ClientAPI::class.java)
-        val call = api.getEspecies()
+        val call = api.getVacunas()
 
-        call.enqueue(object : Callback<List<Especie>> {
-            override fun onResponse(call: Call<List<Especie>>, response: Response<List<Especie>>) {
+        call.enqueue(object : Callback<List<Vacuna>> {
+            override fun onResponse(call: Call<List<Vacuna>>, response: Response<List<Vacuna>>) {
                 if (response.isSuccessful) {
-                    val especies = response.body()
-                    if (especies != null) {
-                        adapter = EspecieAdapter(especies)
+                    val vacunas = response.body()
+                    if (vacunas != null) {
+                        adapter = VacunaAdapter(vacunas)
                         recyclerView.adapter = adapter
 
-                        adapter.setOnItemClickListener(object : EspecieAdapter.OnItemClickListener {
-                            override fun onItemClick(especie: Especie) {
-                                val intent = Intent(baseContext, ActualizarEspecieActivity::class.java)
+                        adapter.setOnBtnActualizarListener(object : VacunaAdapter.OnBtnActualizarListener {
+                            override fun onBtnActualizarClick(vacuna: Vacuna) {
+                                val intent = Intent(baseContext, ActualizarVacunaActivity::class.java)
 
                                 // Se pasa la información de la especie
-                                intent.putExtra("id_especie", especie.id_especie)
-                                intent.putExtra("nombre", especie.nombre)
+                                intent.putExtra("id_vacuna", vacuna.id_vacuna)
+                                intent.putExtra("vacuna", vacuna.vacuna)
+                                intent.putExtra("descripcion", vacuna.descripcion)
                                 startActivity(intent)
                                 finish()
                             }
                         })
 
-                        adapter.setOnBtnEliminarListener(object : EspecieAdapter.OnBtnEliminarListener {
-                            override fun onBtnEliminarClick(especie: Especie) {
+                        adapter.setOnBtnEliminarListener(object : VacunaAdapter.OnBtnEliminarListener {
+                            override fun onBtnEliminarClick(vacuna: Vacuna) {
                                 builder.setPositiveButton(resources.getString(R.string.txt_si)) { dialog, which ->
-                                    api.eliminarEspecie(especie.id_especie).enqueue(object : Callback<Especie> {
-                                        override fun onResponse(call: Call<Especie>, response: Response<Especie>) {
+                                    api.eliminarVacuna(vacuna.id_vacuna).enqueue(object :
+                                        Callback<Vacuna> {
+                                        override fun onResponse(call: Call<Vacuna>, response: Response<Vacuna>) {
                                             if (response.isSuccessful) {
                                                 val ok = response.errorBody()?.string()
-                                                Toast.makeText(this@ListarEspeciesActivity, resources.getString(R.string.info_eliminar_especie), Toast.LENGTH_SHORT).show()
-                                                listarEspecies()
+                                                Toast.makeText(this@VacunasActivity, resources.getString(R.string.info_eliminar_vacuna), Toast.LENGTH_SHORT).show()
+                                                listarVacunas()
                                             } else {
                                                 val error = response.errorBody()?.string()
-                                                Toast.makeText(this@ListarEspeciesActivity, resources.getString(R.string.error_eliminar_especie), Toast.LENGTH_SHORT).show()
+                                                Toast.makeText(this@VacunasActivity, resources.getString(R.string.error_eliminar_vacuna), Toast.LENGTH_SHORT).show()
                                             }
                                         }
 
-                                        override fun onFailure(call: Call<Especie>, t: Throwable) {
-                                            Toast.makeText(this@ListarEspeciesActivity, resources.getString(R.string.error_eliminar_especie), Toast.LENGTH_SHORT).show()
+                                        override fun onFailure(call: Call<Vacuna>, t: Throwable) {
+                                            Toast.makeText(this@VacunasActivity, resources.getString(R.string.error_eliminar_vacuna), Toast.LENGTH_SHORT).show()
                                         }
                                     })
                                 }
@@ -108,17 +108,17 @@ class ListarEspeciesActivity : AppCompatActivity() {
                 } else {
                     val error = response.errorBody()?.string()
                     Toast.makeText(
-                        this@ListarEspeciesActivity,
-                        "Error al obtener las especies",
+                        this@VacunasActivity,
+                        resources.getString(R.string.error_registros),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
             }
 
-            override fun onFailure(call: Call<List<Especie>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Vacuna>>, t: Throwable) {
                 Toast.makeText(
-                    this@ListarEspeciesActivity,
-                    "Error al obtener las especies",
+                    this@VacunasActivity,
+                    resources.getString(R.string.error_registros),
                     Toast.LENGTH_SHORT
                 ).show()
             }

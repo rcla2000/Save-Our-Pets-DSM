@@ -29,11 +29,30 @@
     <string name="txt_nombre">Nombre</string>
     <string name="txt_agregar_especie">Agregar especie</string>
     <string name="txt_actualizar_especie">Actualizar especie</string>
+    <string name="txt_agregar_vacuna">Agregar Vacuna</string>
+    <string name="txt_vacuna">Vacuna</string>
+    <string name="txt_descripcion">Descripción</string>
 
+    <string name="error_registros">Error obteniendo los registros</string>
     <string name="info_especie">Especie creada exitosamente</string>
     <string name="info_actualizar_especie">Especie actualizada exitosamente</string>
+    <string name="info_eliminar_especie">Especie eliminada con éxito</string>
+    <string name="info_vacuna">Vacuna agregada con éxito</string>
+    <string name="info_actualizar_vacuna">Vacuna actualizada con éxito</string>
+    <string name="info_eliminar_vacuna">Vacuna eliminada con éxito</string>
+    <string name="error_nombre_vacuna">Ingres el nombre de la vacuna</string>
+    <string name="error_des_vacuna">Ingrese la descripción de la vacuna</string>
 
     <string name="error_nombre_especie">Ingrese el nombre de la especie</string>
     <string name="error_especie">Ocurrió un error al crear la especie</string>
     <string name="error_actualizar_especie">No se pudo actualizar el registro de especie</string>
+    <string name="error_eliminar_especie">Ocurrió un error al intentar eliminar la especie</string>
+    <string name="error_vacuna">Ocurrió un error al agregar la vacuna</string>
+    <string name="error_actualizar_vacuna">No se pudo actualizar el registro de vacuna</string>
+    <string name="error_eliminar_vacuna">Ocurrió un error al intentar eliminar la vacuna</string>
+    <string name="txt_cancelado">Cancelado</string>
+    <string name="txt_si">Sí</string>
+    <string name="txt_no">No</string>
+    <string name="txt_confirmacion">Confirmación</string>
+    <string name="pregunta_eliminar">¿Estás seguro que deseas eliminar este registro?</string>
 </resources>

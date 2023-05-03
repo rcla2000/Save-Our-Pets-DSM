@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".especies.ListarEspeciesActivity">
-
+    android:layout_height="match_parent"
+    tools:context=".vacunas.VacunasActivity">
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAgregarEspecie"
+        android:id="@+id/btnAgregarVacuna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -24,7 +23,7 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewEspecie"
+        android:id="@+id/recyclerViewVacunas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

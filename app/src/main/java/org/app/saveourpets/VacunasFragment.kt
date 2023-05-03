@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import org.app.saveourpets.datos.ClientAPI
-import org.app.saveourpets.datos.Vacuna
-import org.app.saveourpets.datos.VacunaAdapter
+import org.app.saveourpets.vacunas.Vacuna
+import org.app.saveourpets.vacunas.VacunaAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -40,11 +40,30 @@
     <string name="txt_nombre">Name</string>
     <string name="txt_agregar_especie">Add species</string>
     <string name="txt_actualizar_especie">Update specie</string>
+    <string name="txt_agregar_vacuna">Add vaccine</string>
+    <string name="txt_vacuna">Vaccine</string>
+    <string name="txt_descripcion">Description</string>
 
-    <string name="info_especie">Specie added successfully</string>
-    <string name="info_actualizar_especie">Specie updated successfully</string>
+    <string name="info_especie">Specie successfully added </string>
+    <string name="info_actualizar_especie">Specie successfully updated </string>
+    <string name="info_eliminar_especie">Specie successfully eliminated</string>
+    <string name="info_vacuna">Vaccine successfully added</string>
+    <string name="info_actualizar_vacuna">Vaccine successfully updated </string>
+    <string name="info_eliminar_vacuna">Vaccine successfully eliminated</string>
 
+    <string name="error_registros">Error getting the records</string>
     <string name="error_nombre_especie">Enter the species name</string>
     <string name="error_especie">An error occurred when try to save the specie</string>
     <string name="error_actualizar_especie">An error occurred when try to update the specie</string>
+    <string name="error_eliminar_especie">An error occurred when try to delete the specie</string>
+    <string name="error_vacuna">An error occurred when try to save the vaccine</string>
+    <string name="error_actualizar_vacuna">An error occurred when try to update the vaccine</string>
+    <string name="error_eliminar_vacuna">An error occurred when try to delete the vaccine</string>
+    <string name="error_nombre_vacuna">Enter vaccine\'s name</string>
+    <string name="error_des_vacuna">Enter vaccine\'s description</string>
+    <string name="txt_cancelado">Canceled</string>
+    <string name="txt_si">Yes</string>
+    <string name="txt_no">No</string>
+    <string name="txt_confirmacion">Confirmation</string>
+    <string name="pregunta_eliminar">Are you sure do you want to delete this register ?</string>
 </resources>

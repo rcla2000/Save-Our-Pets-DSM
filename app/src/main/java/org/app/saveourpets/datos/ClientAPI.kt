@@ -1,8 +1,10 @@
 package org.app.saveourpets.datos
 
 import org.app.saveourpets.especies.Especie
+import org.app.saveourpets.vacunas.Vacuna
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -23,6 +25,15 @@ interface ClientAPI {
     @GET("especies/{id}")
     fun obtenerEspeciePorId(@Path("id") id: Int): Call<Especie>
 
+    @DELETE("especies/{id}")
+    fun eliminarEspecie(@Path("id") id: Int): Call<Especie>
+
     @GET("vacunas")
     fun getVacunas(): Call<List<Vacuna>>
+
+    @POST("vacunas/crear")
+    fun crearVacuna(@Body vacuna: Vacuna) : Call<Vacuna>
+
+    @DELETE("vacunas/{id}")
+    fun eliminarVacuna(@Path("id") id: Int): Call<Vacuna>
 }
