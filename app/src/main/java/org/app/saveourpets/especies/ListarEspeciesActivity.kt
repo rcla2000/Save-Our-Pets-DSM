@@ -50,7 +50,7 @@ class ListarEspeciesActivity : AppCompatActivity() {
         val builder = crearDialogo()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.4/api-save-our-pets/public/api/")
+            .baseUrl("http://192.168.0.5/api-save-our-pets/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

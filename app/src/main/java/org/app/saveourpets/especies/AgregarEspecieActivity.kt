@@ -33,7 +33,7 @@ class AgregarEspecieActivity : AppCompatActivity() {
                 val nombre = nombreEditText.text.toString()
                 val especie = Especie(0, nombre)
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://192.168.0.4/api-save-our-pets/public/api/")
+                    .baseUrl("http://192.168.0.5/api-save-our-pets/public/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
@@ -44,11 +44,10 @@ class AgregarEspecieActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<Especie>, response: Response<Especie>) {
                         if (response.isSuccessful) {
                             val ok = response.errorBody()?.string()
-                            Log.e("API", "OK: $ok")
+                            nombreEditText.setText("")
                             Toast.makeText(this@AgregarEspecieActivity, resources.getString(R.string.info_especie), Toast.LENGTH_SHORT).show()
                         } else {
                             val error = response.errorBody()?.string()
-                            Log.e("API", "Error al agregar la especie: $error")
                             Toast.makeText(this@AgregarEspecieActivity, resources.getString(R.string.error_especie), Toast.LENGTH_SHORT).show()
                         }
                     }

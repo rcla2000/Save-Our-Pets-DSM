@@ -34,6 +34,9 @@ interface ClientAPI {
     @POST("vacunas/crear")
     fun crearVacuna(@Body vacuna: Vacuna) : Call<Vacuna>
 
+    @POST("vacunas/actualizar/{id}")
+    fun actualizarVacuna(@Path("id") id: Int, @Body vacuna: Vacuna) : Call<Vacuna>
+
     @DELETE("vacunas/{id}")
     fun eliminarVacuna(@Path("id") id: Int): Call<Vacuna>
 }

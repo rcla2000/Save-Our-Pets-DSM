@@ -15,9 +15,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SaveOurPets.NoActionBar"
+        android:theme="@style/Theme.SaveOurPets"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".vacunas.DetallesVacunaActivity"
+            android:exported="false" />
         <activity
             android:name=".vacunas.ActualizarVacunaActivity"
             android:exported="false" />

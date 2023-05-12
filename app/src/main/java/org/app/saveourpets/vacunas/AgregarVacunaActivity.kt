@@ -22,6 +22,14 @@ class AgregarVacunaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_vacuna)
+        agregarVacuna()
+    }
+
+    private fun limpiarCampos() {
+        vacunaEditText = findViewById<EditText>(R.id.edt_vacuna)
+        descripcionEditText = findViewById<EditText>(R.id.edt_descripcion)
+        vacunaEditText.setText("")
+        descripcionEditText.setText("")
     }
 
     private fun agregarVacuna() {
@@ -31,6 +39,7 @@ class AgregarVacunaActivity : AppCompatActivity() {
         var errores : Int = 0
 
         btnAgregar.setOnClickListener {
+            errores = 0
             if (Validaciones.estaVacio(vacunaEditText.text.toString())) {
                 errores += 1
                 vacunaEditText.setError(resources.getString(R.string.error_nombre_vacuna))
@@ -45,7 +54,7 @@ class AgregarVacunaActivity : AppCompatActivity() {
                 val descripcion = descripcionEditText.text.toString()
                 val vacuna = Vacuna(0, nombre, descripcion)
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://192.168.0.4/api-save-our-pets/public/api/")
+                    .baseUrl("http://192.168.0.5/api-save-our-pets/public/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
@@ -56,10 +65,11 @@ class AgregarVacunaActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<Vacuna>, response: Response<Vacuna>) {
                         if (response.isSuccessful) {
                             val ok = response.errorBody()?.string()
+                            limpiarCampos()
                             Toast.makeText(this@AgregarVacunaActivity, resources.getString(R.string.info_vacuna), Toast.LENGTH_SHORT).show()
                         } else {
                             val error = response.errorBody()?.string()
-                            Toast.makeText(this@AgregarVacunaActivity, resources.getString(R.string.error_vacuna), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@AgregarVacunaActivity, resources.getString(R.string.error_vacuna) + error, Toast.LENGTH_SHORT).show()
                         }
                     }
 

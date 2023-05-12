@@ -12,6 +12,7 @@ import org.app.saveourpets.R
 class VacunaAdapter(private val elementos : List<Vacuna>): RecyclerView.Adapter<VacunaAdapter.ViewHolder>() {
     private var btnActualizarListener : OnBtnActualizarListener? = null
     private var btnEliminarListener : OnBtnEliminarListener? = null
+    private var btnDetallesListener : OnBtnDetallesListener? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_item_vacunas, parent, false)
 
@@ -21,7 +22,6 @@ class VacunaAdapter(private val elementos : List<Vacuna>): RecyclerView.Adapter<
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = elementos[position]
         holder.title.text=item.vacuna
-        holder.subtitle.text = ""
 
         if (item.descripcion.length>90) {
             holder.description.text = item.descripcion.substring(0,87) + "..."
@@ -38,6 +38,10 @@ class VacunaAdapter(private val elementos : List<Vacuna>): RecyclerView.Adapter<
         holder.btnEliminar.setOnClickListener {
             btnEliminarListener?.onBtnEliminarClick(item)
         }
+
+        holder.btnDetalles.setOnClickListener {
+            btnDetallesListener?.onBtnDetallesClick(item)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -47,10 +51,10 @@ class VacunaAdapter(private val elementos : List<Vacuna>): RecyclerView.Adapter<
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imagen : ImageView = view.findViewById(R.id.imgViewer)
         val title: TextView = view.findViewById(R.id.item_title)
-        val subtitle : TextView = view.findViewById(R.id.item_subtitle)
         val description: TextView = view.findViewById(R.id.item_descripcion)
         val btnActualizar : Button = view.findViewById<Button>(R.id.btnUpdate)
         val btnEliminar : Button = view.findViewById<Button>(R.id.btnDelete)
+        val btnDetalles : Button = view.findViewById<Button>(R.id.btnDetalle)
     }
 
     fun setOnBtnEliminarListener(listener: OnBtnEliminarListener?) {
@@ -60,10 +64,17 @@ class VacunaAdapter(private val elementos : List<Vacuna>): RecyclerView.Adapter<
     fun setOnBtnActualizarListener(listener: OnBtnActualizarListener?) {
         this.btnActualizarListener = listener
     }
+
+    fun setOnBtnDetallesListener(listener: OnBtnDetallesListener?) {
+        this.btnDetallesListener = listener
+    }
     interface OnBtnActualizarListener {
         fun onBtnActualizarClick(vacuna: Vacuna)
     }
     interface OnBtnEliminarListener {
         fun onBtnEliminarClick(vacuna: Vacuna)
+    }
+    interface OnBtnDetallesListener {
+        fun onBtnDetallesClick(vacuna: Vacuna)
     }
 }

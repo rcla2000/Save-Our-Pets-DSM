@@ -29,9 +29,11 @@
     <string name="txt_nombre">Nombre</string>
     <string name="txt_agregar_especie">Agregar especie</string>
     <string name="txt_actualizar_especie">Actualizar especie</string>
+    <string name="txt_actualizar_vacuna">Actualizar vacuna</string>
     <string name="txt_agregar_vacuna">Agregar Vacuna</string>
     <string name="txt_vacuna">Vacuna</string>
     <string name="txt_descripcion">Descripción</string>
+    <string name="txt_volver">Volver</string>
 
     <string name="error_registros">Error obteniendo los registros</string>
     <string name="info_especie">Especie creada exitosamente</string>
@@ -40,7 +42,7 @@
     <string name="info_vacuna">Vacuna agregada con éxito</string>
     <string name="info_actualizar_vacuna">Vacuna actualizada con éxito</string>
     <string name="info_eliminar_vacuna">Vacuna eliminada con éxito</string>
-    <string name="error_nombre_vacuna">Ingres el nombre de la vacuna</string>
+    <string name="error_nombre_vacuna">Ingrese el nombre de la vacuna</string>
     <string name="error_des_vacuna">Ingrese la descripción de la vacuna</string>
 
     <string name="error_nombre_especie">Ingrese el nombre de la especie</string>
