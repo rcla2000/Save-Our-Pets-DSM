@@ -26,6 +26,7 @@
     <string name="btn_actualizar">Actualizar</string>
     <string name="btn_eliminar">Eliminar</string>
     <string name="btn_agregar">Agregar</string>
+    <string name="btn_volver">Volver</string>
     <string name="txt_nombre">Nombre</string>
     <string name="txt_agregar_especie">Agregar especie</string>
     <string name="txt_actualizar_especie">Actualizar especie</string>
@@ -39,11 +40,21 @@
     <string name="info_especie">Especie creada exitosamente</string>
     <string name="info_actualizar_especie">Especie actualizada exitosamente</string>
     <string name="info_eliminar_especie">Especie eliminada con éxito</string>
+
     <string name="info_vacuna">Vacuna agregada con éxito</string>
     <string name="info_actualizar_vacuna">Vacuna actualizada con éxito</string>
     <string name="info_eliminar_vacuna">Vacuna eliminada con éxito</string>
     <string name="error_nombre_vacuna">Ingrese el nombre de la vacuna</string>
     <string name="error_des_vacuna">Ingrese la descripción de la vacuna</string>
+
+    <string name="txt_agregar_raza">Agregar raza</string>
+    <string name="txt_raza">Raza</string>
+    <string name="txt_especie">Especie</string>
+    <string name="info_raza">Raza agregada con éxito</string>
+    <string name="info_actualizar_raza">Raza actualizada con éxito</string>
+    <string name="info_eliminar_raza">Raza eliminada con éxito</string>
+    <string name="error_eliminar_raza">Ocurrió un error al intentar eliminar la raza</string>
+    <string name="error_raza">Ingrese el nombre de la raza</string>
 
     <string name="error_nombre_especie">Ingrese el nombre de la especie</string>
     <string name="error_especie">Ocurrió un error al crear la especie</string>

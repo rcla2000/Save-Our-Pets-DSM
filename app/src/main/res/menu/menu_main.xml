@@ -7,6 +7,11 @@
         android:icon="@drawable/species_icon"
         app:showAsAction="never">
     </item>
+    <item android:id="@+id/action_razas"
+        android:title="Razas"
+        android:icon="@drawable/vacuna_icon"
+        app:showAsAction="never">
+    </item>
     <item android:id="@+id/action_vacunas"
         android:title="Vacunas"
         android:icon="@drawable/vacuna_icon"

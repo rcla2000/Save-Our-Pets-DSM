@@ -19,6 +19,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".razas.ActualizarRazaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".razas.AgregarRazaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".razas.RazasActivity"
+            android:exported="false" />
+        <activity
             android:name=".vacunas.DetallesVacunaActivity"
             android:exported="false" />
         <activity

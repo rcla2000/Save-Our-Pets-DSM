@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    tools:context=".razas.AgregarRazaActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_agregar_raza"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_raza"
+        android:textSize="18dp" />
+    <EditText
+        android:id="@+id/edt_raza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/txt_especie"
+        android:textSize="18dp" />
+
+    <Spinner
+        android:id="@+id/spinnerIDEspecie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/red_Default"
+        android:backgroundTint="@color/red_Default"
+        android:dropDownWidth="match_parent"
+        android:popupBackground="@color/red_Default" />
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <Button
+           android:id="@+id/btn_agregar_raza"
+           android:layout_width="140dp"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:backgroundTint="@color/red_Default"
+           android:text="@string/btn_agregar" />
+       <Button
+           android:id="@+id/btn_volver"
+           android:layout_width="140dp"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_alignParentEnd="true"
+           android:backgroundTint="@color/blue_Default"
+           android:text="@string/btn_volver" />
+   </RelativeLayout>
+</LinearLayout>

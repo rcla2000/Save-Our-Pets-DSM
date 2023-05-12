@@ -37,6 +37,7 @@
     <string name="btn_actualizar">Update</string>
     <string name="btn_eliminar">Delete</string>
     <string name="btn_agregar">Save</string>
+    <string name="btn_volver">Back</string>
     <string name="txt_nombre">Name</string>
     <string name="txt_agregar_especie">Add species</string>
     <string name="txt_actualizar_especie">Update specie</string>
@@ -52,6 +53,15 @@
     <string name="info_vacuna">Vaccine successfully added</string>
     <string name="info_actualizar_vacuna">Vaccine successfully updated </string>
     <string name="info_eliminar_vacuna">Vaccine successfully eliminated</string>
+
+    <string name="txt_agregar_raza">Add race</string>
+    <string name="txt_raza">Race</string>
+    <string name="txt_especie">Specie</string>
+    <string name="info_raza">Race successfully added </string>
+    <string name="info_actualizar_raza">Race successfully updated </string>
+    <string name="info_eliminar_raza">Race successfully eliminated</string>
+    <string name="error_eliminar_raza">An error occurred when try to delete the race</string>
+    <string name="error_raza">Enter the race\'s name</string>
 
     <string name="error_registros">Error getting the records</string>
     <string name="error_nombre_especie">Enter the specie\'s name</string>

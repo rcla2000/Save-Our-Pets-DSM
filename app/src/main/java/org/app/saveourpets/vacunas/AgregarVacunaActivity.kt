@@ -1,12 +1,17 @@
 package org.app.saveourpets.vacunas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
+import org.app.saveourpets.especies.ListarEspeciesActivity
+import org.app.saveourpets.razas.RazasActivity
 import org.app.saveourpets.utils.Validaciones
 import retrofit2.Call
 import retrofit2.Callback
@@ -54,7 +59,7 @@ class AgregarVacunaActivity : AppCompatActivity() {
                 val descripcion = descripcionEditText.text.toString()
                 val vacuna = Vacuna(0, nombre, descripcion)
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://192.168.0.5/api-save-our-pets/public/api/")
+                    .baseUrl("http://172.16.102.107/api-save-our-pets/public/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
@@ -79,5 +84,31 @@ class AgregarVacunaActivity : AppCompatActivity() {
                 })
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_especies -> {
+                val intent = Intent(this, ListarEspeciesActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_vacunas -> {
+                val intent = Intent(this, VacunasActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_razas -> {
+                val intent = Intent(this, RazasActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

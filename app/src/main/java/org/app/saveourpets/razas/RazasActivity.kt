@@ -1,4 +1,4 @@
-package org.app.saveourpets.vacunas
+package org.app.saveourpets.razas
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,29 +15,29 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
 import org.app.saveourpets.especies.ListarEspeciesActivity
-import org.app.saveourpets.razas.RazasActivity
+import org.app.saveourpets.vacunas.VacunasActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class VacunasActivity : AppCompatActivity() {
+class RazasActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: VacunaAdapter
+    private lateinit var adapter: RazaAdapter
     private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vacunas)
-        val btnAgregar : FloatingActionButton = findViewById<FloatingActionButton>(R.id.btnAgregarVacuna)
+        setContentView(R.layout.activity_razas)
+        val btnAgregar : FloatingActionButton = findViewById<FloatingActionButton>(R.id.btnAgregarRaza)
 
         btnAgregar.setOnClickListener {
-            val intent = Intent(this, AgregarVacunaActivity::class.java)
+            val intent = Intent(this, AgregarRazaActivity::class.java)
             startActivity(intent)
             finish()
         }
-        listarVacunas()
+        listarRazas()
     }
 
     private fun crearDialogo() : AlertDialog.Builder {
@@ -50,8 +50,8 @@ class VacunasActivity : AppCompatActivity() {
         return builder
     }
 
-    private fun listarVacunas() {
-        recyclerView = findViewById(R.id.recyclerViewVacunas)
+    private fun listarRazas() {
+        recyclerView = findViewById(R.id.recyclerViewRazas)
         recyclerView.layoutManager = LinearLayoutManager(this)
         progressBar = findViewById<ProgressBar>(R.id.progressBar)
         progressBar.visibility = View.GONE
@@ -65,58 +65,48 @@ class VacunasActivity : AppCompatActivity() {
         // Crea una instancia del servicio que utiliza la autenticación HTTP básica
         val api = retrofit.create(ClientAPI::class.java)
         progressBar.visibility = View.VISIBLE
-        val call = api.getVacunas()
+        val call = api.getRazas()
 
-        call.enqueue(object : Callback<List<Vacuna>> {
-            override fun onResponse(call: Call<List<Vacuna>>, response: Response<List<Vacuna>>) {
+        call.enqueue(object : Callback<List<Raza>> {
+            override fun onResponse(call: Call<List<Raza>>, response: Response<List<Raza>>) {
                 if (response.isSuccessful) {
-                    val vacunas = response.body()
-                    if (vacunas != null) {
-                        adapter = VacunaAdapter(vacunas)
+                    val razas = response.body()
+                    if (razas != null) {
+                        adapter = RazaAdapter(razas)
                         recyclerView.adapter = adapter
 
-                        adapter.setOnBtnDetallesListener(object: VacunaAdapter.OnBtnDetallesListener {
-                            override fun onBtnDetallesClick(vacuna: Vacuna) {
-                                val intent = Intent(baseContext, DetallesVacunaActivity::class.java)
-                                // Se pasa la información de la vacuna a la otra actividad
-                                intent.putExtra("id_vacuna", vacuna.id_vacuna)
-                                intent.putExtra("vacuna", vacuna.vacuna)
-                                intent.putExtra("descripcion", vacuna.descripcion)
+                        adapter.setOnBtnActualizarListener(object : RazaAdapter.OnBtnActualizarListener {
+                            override fun onBtnActualizarClick(raza: Raza) {
+                                val intent = Intent(baseContext, ActualizarRazaActivity::class.java)
+
+                                // Se pasa la información de la raza
+                                intent.putExtra("id_raza", raza.id_raza)
+                                intent.putExtra("nombre", raza.nombre)
+                                intent.putExtra("id_especie", raza.id_especie)
+                                intent.putExtra("imagen", raza.imagen)
                                 startActivity(intent)
                                 finish()
                             }
                         })
 
-                        adapter.setOnBtnActualizarListener(object : VacunaAdapter.OnBtnActualizarListener {
-                            override fun onBtnActualizarClick(vacuna: Vacuna) {
-                                val intent = Intent(baseContext, ActualizarVacunaActivity::class.java)
-                                // Se pasa la información de la vacuna a la otra actividad
-                                intent.putExtra("id_vacuna", vacuna.id_vacuna)
-                                intent.putExtra("vacuna", vacuna.vacuna)
-                                intent.putExtra("descripcion", vacuna.descripcion)
-                                startActivity(intent)
-                                finish()
-                            }
-                        })
-
-                        adapter.setOnBtnEliminarListener(object : VacunaAdapter.OnBtnEliminarListener {
-                            override fun onBtnEliminarClick(vacuna: Vacuna) {
+                        adapter.setOnBtnEliminarListener(object : RazaAdapter.OnBtnEliminarListener {
+                            override fun onBtnEliminarClick(raza: Raza) {
                                 builder.setPositiveButton(resources.getString(R.string.txt_si)) { dialog, which ->
-                                    api.eliminarVacuna(vacuna.id_vacuna).enqueue(object :
-                                        Callback<Vacuna> {
-                                        override fun onResponse(call: Call<Vacuna>, response: Response<Vacuna>) {
+                                    api.eliminarRaza(raza.id_raza).enqueue(object :
+                                        Callback<Raza> {
+                                        override fun onResponse(call: Call<Raza>, response: Response<Raza>) {
                                             if (response.isSuccessful) {
                                                 val ok = response.errorBody()?.string()
-                                                Toast.makeText(this@VacunasActivity, resources.getString(R.string.info_eliminar_vacuna), Toast.LENGTH_SHORT).show()
-                                                listarVacunas()
+                                                Toast.makeText(this@RazasActivity, resources.getString(R.string.info_eliminar_raza), Toast.LENGTH_SHORT).show()
+                                                listarRazas()
                                             } else {
                                                 val error = response.errorBody()?.string()
-                                                Toast.makeText(this@VacunasActivity, resources.getString(R.string.error_eliminar_vacuna), Toast.LENGTH_SHORT).show()
+                                                Toast.makeText(this@RazasActivity, resources.getString(R.string.error_eliminar_raza) + error, Toast.LENGTH_SHORT).show()
                                             }
                                         }
 
-                                        override fun onFailure(call: Call<Vacuna>, t: Throwable) {
-                                            Toast.makeText(this@VacunasActivity, resources.getString(R.string.error_eliminar_vacuna), Toast.LENGTH_SHORT).show()
+                                        override fun onFailure(call: Call<Raza>, t: Throwable) {
+                                            Toast.makeText(this@RazasActivity, resources.getString(R.string.error_eliminar_raza) + t.message, Toast.LENGTH_SHORT).show()
                                         }
                                     })
                                 }
@@ -126,12 +116,12 @@ class VacunasActivity : AppCompatActivity() {
                                 dialog.show()
                             }
                         })
-                        progressBar.visibility = View.GONE
                     }
+                    progressBar.visibility = View.GONE
                 } else {
                     val error = response.errorBody()?.string()
                     Toast.makeText(
-                        this@VacunasActivity,
+                        this@RazasActivity,
                         resources.getString(R.string.error_registros),
                         Toast.LENGTH_SHORT
                     ).show()
@@ -139,9 +129,9 @@ class VacunasActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Vacuna>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Raza>>, t: Throwable) {
                 Toast.makeText(
-                    this@VacunasActivity,
+                    this@RazasActivity,
                     resources.getString(R.string.error_registros),
                     Toast.LENGTH_SHORT
                 ).show()
