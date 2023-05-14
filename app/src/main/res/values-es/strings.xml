@@ -82,8 +82,15 @@
     <string name="error_dui">Ingrese su número de DUI</string>
     <string name="error_email">Ingrese su dirección de correo electrónico</string>
     <string name="error_fecha_nacimiento">Ingrese su fecha de nacimiento</string>
+    <string name="error_fecha_nacimiento_2">Ingrese una fecha válida</string>
     <string name="error_direccion">Especifique una dirección</string>
     <string name="error_password">Especifique una contraseña para su perfil</string>
+
+    <!-- Menú de usuarios -->
+    <string name="btn_ir">Ir</string>
+    <string name="txt_reportar">Reportar mascota</string>
+    <string name="txt_adoptar">Adoptar una mascota</string>
+    <string name="txt_perfil">Mi perfil</string>
 
     <!-- Strings para inicio de sesión -->
     <string name="login_correcto">Bienvenid@</string>

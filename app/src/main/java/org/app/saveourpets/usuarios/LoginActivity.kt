@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
+import org.app.saveourpets.usuarios.particular.MenuParticularActivity
 import org.app.saveourpets.usuarios.particular.RegistroParticularActivity
 import org.app.saveourpets.utils.Validaciones
 import retrofit2.Call
@@ -40,8 +41,7 @@ class LoginActivity : AppCompatActivity() {
         if (Validaciones.estaVacio(edtEmail.text.toString())) {
             errores += 1
             edtEmail.error = resources.getString(R.string.error_email)
-        }
-        if (!Validaciones.validarEmail(edtEmail.text.toString())) {
+        } else if (!Validaciones.validarEmail(edtEmail.text.toString())) {
             errores += 1
             edtEmail.error = resources.getString(R.string.login_error_email)
         }
@@ -80,12 +80,17 @@ class LoginActivity : AppCompatActivity() {
                 val api = retrofit.create(ClientAPI::class.java)
 
                 api.login(usuario).enqueue(object :
-                    Callback<Boolean> {
-                    override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                    Callback<Login> {
+                    override fun onResponse(call: Call<Login>, response: Response<Login>) {
                         if (response.isSuccessful) {
-                            val res : Boolean? = response.body()
-                            if (res == true) {
+                            val login : Login? = response.body()
+                            if (login?.estado == true) {
+                                val usuario : Usuario = login.usuario
+                                Sesion.usuario = usuario
                                 Toast.makeText(this@LoginActivity, resources.getString(R.string.login_correcto), Toast.LENGTH_SHORT).show()
+                                val intent = Intent(baseContext, MenuParticularActivity::class.java)
+                                startActivity(intent)
+                                finish()
                             } else {
                                 Toast.makeText(this@LoginActivity, resources.getString(R.string.error_login_1), Toast.LENGTH_LONG).show()
                             }
@@ -95,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
 
-                    override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                    override fun onFailure(call: Call<Login>, t: Throwable) {
                         Toast.makeText(this@LoginActivity, resources.getString(R.string.error_login_3), Toast.LENGTH_LONG).show()
                     }
                 })

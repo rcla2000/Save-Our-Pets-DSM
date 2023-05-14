@@ -1,11 +1,15 @@
 package org.app.saveourpets.usuarios.particular
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
 import org.app.saveourpets.especies.Especie
@@ -25,15 +29,40 @@ class RegistroParticularActivity : AppCompatActivity() {
     private lateinit var edtDui : EditText
     private lateinit var edtEmail : EditText
     private lateinit var edtDireccion : EditText
+    private lateinit var edtFechaNacimiento : EditText
     private lateinit var edtPassword : EditText
     private lateinit var btnRegistro : Button
     private lateinit var btnVolver : Button
+    private lateinit var dpFechaNacimiento : DatePicker
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_particular)
         accionBtnVolver()
         accionBtnRegistro()
+    }
+
+    private fun obtenerFechaDatePicker() : String {
+        var dia = dpFechaNacimiento?.dayOfMonth.toString().padStart(2, '0')
+        var mes = (dpFechaNacimiento!!.month+1).toString().padStart(2, '0')
+        var anio = dpFechaNacimiento?.year.toString().padStart(4, '0')
+        return dia + "/" + mes + "/" + anio
+    }
+
+    fun mostrarCalendario(view: View?) : Unit{
+        dpFechaNacimiento?.visibility = View.VISIBLE
+    }
+
+    private fun convertirFecha(fecha : String) : String {
+        if (!fecha.isEmpty()) {
+            val partesFecha = fecha.split("/")
+            val dia = partesFecha[0]
+            val mes = partesFecha[1]
+            val anio = partesFecha[2]
+            return "$anio/$mes/$dia"
+        }
+        return "0000/00/00"
     }
 
     // Función para validar campos de entrada
@@ -46,6 +75,7 @@ class RegistroParticularActivity : AppCompatActivity() {
         edtEmail = findViewById(R.id.edt_email)
         edtDireccion = findViewById(R.id.edt_direccion)
         edtPassword = findViewById(R.id.edt_password)
+        edtFechaNacimiento = findViewById(R.id.edt_fecha_nacimiento)
 
         if (Validaciones.estaVacio(edtNombres.text.toString())) {
             edtNombres.error = resources.getString(R.string.error_user_nombres)
@@ -75,6 +105,13 @@ class RegistroParticularActivity : AppCompatActivity() {
             edtDireccion.error = resources.getString(R.string.error_direccion)
             errores += 1
         }
+        if (Validaciones.estaVacio(edtFechaNacimiento.text.toString())) {
+            edtFechaNacimiento.error = resources.getString(R.string.error_fecha_nacimiento)
+            errores += 1
+        } else if (!Validaciones.validarFecha(edtFechaNacimiento.text.toString())) {
+            edtFechaNacimiento.error = resources.getString(R.string.error_fecha_nacimiento_2)
+            errores += 1
+        }
         if (Validaciones.estaVacio(edtPassword.text.toString())) {
             edtPassword.error = resources.getString(R.string.error_password)
             errores += 1
@@ -93,8 +130,20 @@ class RegistroParticularActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun accionBtnRegistro() {
         btnRegistro = findViewById(R.id.btn_registro)
+        dpFechaNacimiento = findViewById(R.id.dpFechaNacimiento)
+        edtFechaNacimiento = findViewById(R.id.edt_fecha_nacimiento)
+        // Asignando fecha actual del calendario al editText
+        edtFechaNacimiento?.setText(obtenerFechaDatePicker())
+
+        // Evento para cuando se seleccione una fecha del datepicker
+        dpFechaNacimiento?.setOnDateChangedListener {
+                dpFechaNacimiento, anio, mes, dia ->
+            edtFechaNacimiento?.setText(obtenerFechaDatePicker())
+            dpFechaNacimiento?.visibility = View.GONE
+        }
 
         btnRegistro.setOnClickListener {
             if (errores() == 0) {
@@ -104,6 +153,7 @@ class RegistroParticularActivity : AppCompatActivity() {
                 val dui = edtDui.text.toString()
                 val email = edtEmail.text.toString()
                 val direccion = edtDireccion.text.toString()
+                val fechaNacimiento = convertirFecha(edtFechaNacimiento.text.toString())
                 val password = edtPassword.text.toString()
                 val tipoUsuario : Int = 3
 
@@ -116,7 +166,7 @@ class RegistroParticularActivity : AppCompatActivity() {
                     telefono,
                     dui,
                     direccion,
-                    "2000-08-31",
+                    fechaNacimiento,
                     password
                 )
 

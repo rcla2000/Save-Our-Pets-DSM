@@ -172,7 +172,8 @@
             android:layout_marginTop="10dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/blue_Default"
+            android:backgroundTint="@color/white_Default"
+            android:textColor="@color/black"
             android:text="@string/btn_volver" />
     </RelativeLayout>
 </LinearLayout>

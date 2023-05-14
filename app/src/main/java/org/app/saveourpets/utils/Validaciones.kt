@@ -22,5 +22,10 @@ class Validaciones {
             val regex = Regex("^[0-9]{8}-[0-9]$")
             return regex.matches(dui)
         }
+
+        fun validarFecha(fecha: String) : Boolean {
+            val regex = Regex("^[0-9]{2}/[0-9]{2}/[0-9]{4}$")
+            return regex.matches(fecha)
+        }
     }
 }

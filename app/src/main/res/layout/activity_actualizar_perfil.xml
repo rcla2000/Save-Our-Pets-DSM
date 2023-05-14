@@ -78,17 +78,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/txt_password"
-        android:textSize="18dp" />
-    <EditText
-        android:id="@+id/edt_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -105,7 +94,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/blue_Default"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
             android:text="@string/btn_volver" />
     </RelativeLayout>
 </LinearLayout>
