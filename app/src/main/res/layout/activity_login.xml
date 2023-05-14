@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".usuarios.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon"
+        />
+
+    <TextView
+        android:id="@+id/tv_logIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:text="@string/iniciarSesion"
+        android:fontFamily="@font/josefinsans_regular"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/et_style"
+        android:hint="@string/textUser"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/et_style"
+        android:hint="@string/textPass"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/josefinsans_regular"
+        android:text="@string/btnLogin"
+        android:backgroundTint="@color/red_Default"
+        android:textColor="@android:color/white" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/btn_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/btnFacebook"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/josefinsans_regular"
+        android:text="@string/btn_registro"
+        android:backgroundTint="@color/white_Default"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btn_reporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/josefinsans_regular"
+        android:text="@string/btn_reporte"
+        android:backgroundTint="#3C91E6"
+        android:textColor="@android:color/white" />
+</LinearLayout>

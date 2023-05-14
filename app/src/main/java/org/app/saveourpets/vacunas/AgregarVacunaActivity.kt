@@ -59,7 +59,7 @@ class AgregarVacunaActivity : AppCompatActivity() {
                 val descripcion = descripcionEditText.text.toString()
                 val vacuna = Vacuna(0, nombre, descripcion)
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://172.16.102.107/api-save-our-pets/public/api/")
+                    .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 

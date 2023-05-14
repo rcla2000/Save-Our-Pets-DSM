@@ -49,7 +49,7 @@ class ActualizarEspecieActivity : AppCompatActivity() {
                 val nombre = nombreEditText.text.toString()
                 val especie = Especie(especie.id_especie, nombre)
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://172.16.102.107/api-save-our-pets/public/api/")
+                    .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 

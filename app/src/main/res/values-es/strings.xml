@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Save Our Pets</string>
     <string name="btnPrueba">2 Spanish</string>
-    <string name="iniciarSesion">Iniciar Sesion</string>
+    <string name="iniciarSesion">Iniciar Sesión</string>
     <string name="btnLogin">Acceder</string>
     <string name="textUser">Usuario</string>
     <string name="textPass">Contraseña</string>
@@ -27,10 +27,14 @@
     <string name="btn_eliminar">Eliminar</string>
     <string name="btn_agregar">Agregar</string>
     <string name="btn_volver">Volver</string>
+    <string name="btn_registro">Registrarse</string>
+    <string name="btn_reporte">Reportar mascota</string>
+    <string name="btn_editar_perfil">Actualizar información</string>
     <string name="txt_nombre">Nombre</string>
     <string name="txt_agregar_especie">Agregar especie</string>
     <string name="txt_actualizar_especie">Actualizar especie</string>
     <string name="txt_actualizar_vacuna">Actualizar vacuna</string>
+    <string name="txt_actualizar_raza">Actualizar raza</string>
     <string name="txt_agregar_vacuna">Agregar Vacuna</string>
     <string name="txt_vacuna">Vacuna</string>
     <string name="txt_descripcion">Descripción</string>
@@ -54,7 +58,40 @@
     <string name="info_actualizar_raza">Raza actualizada con éxito</string>
     <string name="info_eliminar_raza">Raza eliminada con éxito</string>
     <string name="error_eliminar_raza">Ocurrió un error al intentar eliminar la raza</string>
+    <string name="error_actualizar_raza">Ocurrió un error al intentar actualizar la raza</string>
     <string name="error_raza">Ingrese el nombre de la raza</string>
+
+    <!-- Strings para la gestión de usuarios -->
+    <string name="txt_titulo_registro">Registro de usuario</string>
+    <string name="txt_user_nombres">Nombres</string>
+    <string name="txt_user_apellidos">Apellidos</string>
+    <string name="txt_user_tel">Teléfono</string>
+    <string name="txt_dui">DUI</string>
+    <string name="txt_email">Correo electrónico</string>
+    <string name="txt_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="txt_direccion">Dirección</string>
+    <string name="txt_password">Contraseña</string>
+    <string name="txt_info_registro_user">Registro completado exitosamente</string>
+    <string name="txt_error_registro_user">Ocurrió un error al registrarse</string>
+    <string name="txt_info_actualizar_user">Información actualizada</string>
+    <string name="txt_error_actualizar_user">No se pudo actualizar la información debido a un error</string>
+    <string name="error_user_nombres">Ingrese sus nombres</string>
+    <string name="error_user_apellidos">Ingrese sus apellidos</string>
+    <string name="error_user_tel">Digite su número de teléfono</string>
+    <string name="error_user_tel_2">Ingrese un número de teléfono válido. Contiene 8 dígitos y debe comenzar con los números: 2,6 o 7</string>
+    <string name="error_dui">Ingrese su número de DUI</string>
+    <string name="error_email">Ingrese su dirección de correo electrónico</string>
+    <string name="error_fecha_nacimiento">Ingrese su fecha de nacimiento</string>
+    <string name="error_direccion">Especifique una dirección</string>
+    <string name="error_password">Especifique una contraseña para su perfil</string>
+
+    <!-- Strings para inicio de sesión -->
+    <string name="login_correcto">Bienvenid@</string>
+    <string name="login_error_password">Ingrese su contraseña</string>
+    <string name="login_error_email">Ingrese una dirección de correo válida</string>
+    <string name="error_login_1">Contraseña incorrecta</string>
+    <string name="error_login_2">El email ingresado no existe en nuestros registros</string>
+    <string name="error_login_3">Ocurrió un error inesperado al iniciar sesión</string>
 
     <string name="error_nombre_especie">Ingrese el nombre de la especie</string>
     <string name="error_especie">Ocurrió un error al crear la especie</string>

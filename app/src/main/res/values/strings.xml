@@ -38,10 +38,14 @@
     <string name="btn_eliminar">Delete</string>
     <string name="btn_agregar">Save</string>
     <string name="btn_volver">Back</string>
+    <string name="btn_registro">Sign Up</string>
+    <string name="btn_reporte">Pet report</string>
+    <string name="btn_editar_perfil">Update profile info</string>
     <string name="txt_nombre">Name</string>
     <string name="txt_agregar_especie">Add species</string>
     <string name="txt_actualizar_especie">Update specie</string>
     <string name="txt_actualizar_vacuna">Update vaccine</string>
+    <string name="txt_actualizar_raza">Update race</string>
     <string name="txt_agregar_vacuna">Add vaccine</string>
     <string name="txt_vacuna">Vaccine</string>
     <string name="txt_descripcion">Description</string>
@@ -57,11 +61,44 @@
     <string name="txt_agregar_raza">Add race</string>
     <string name="txt_raza">Race</string>
     <string name="txt_especie">Specie</string>
-    <string name="info_raza">Race successfully added </string>
+    <string name="info_raza">Race successfully added</string>
     <string name="info_actualizar_raza">Race successfully updated </string>
     <string name="info_eliminar_raza">Race successfully eliminated</string>
     <string name="error_eliminar_raza">An error occurred when try to delete the race</string>
+    <string name="error_actualizar_raza">An error occurred when try to update the race</string>
     <string name="error_raza">Enter the race\'s name</string>
+
+    <!-- Strings para la gestión de usuarios -->
+    <string name="txt_titulo_registro">User Register</string>
+    <string name="txt_user_nombres">Name</string>
+    <string name="txt_user_apellidos">Lastname</string>
+    <string name="txt_user_tel">Telephone</string>
+    <string name="txt_dui">DUI</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_fecha_nacimiento">Birthdate</string>
+    <string name="txt_direccion">Address</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_info_registro_user">Sign up completed</string>
+    <string name="txt_error_registro_user">Error in sign up</string>
+    <string name="txt_info_actualizar_user">Information updated</string>
+    <string name="txt_error_actualizar_user">An error occurred when try to update your information</string>
+    <string name="error_user_nombres">Please enter your name</string>
+    <string name="error_user_apellidos">Please enter your lastname</string>
+    <string name="error_user_tel">Enter your telephone</string>
+    <string name="error_user_tel_2">Please enter a valid phone number. Contains 8 digits and must start with numbers: 2,6 or 7</string>
+    <string name="error_dui">Enter your DUI</string>
+    <string name="error_email">Enter your email address</string>
+    <string name="error_fecha_nacimiento">Enter your birthdate</string>
+    <string name="error_direccion">Enter your address</string>
+    <string name="error_password">Specify a password</string>
+
+    <!-- Strings para inicio de sesión -->
+    <string name="login_correcto">Welcome</string>
+    <string name="login_error_password">Enter your password</string>
+    <string name="login_error_email">Enter a valid email address</string>
+    <string name="error_login_1">Error login. Please verify your password</string>
+    <string name="error_login_2">Your email address doesn\'t exist in our records</string>
+    <string name="error_login_3">An unexpected error occurred while logging in</string>
 
     <string name="error_registros">Error getting the records</string>
     <string name="error_nombre_especie">Enter the specie\'s name</string>

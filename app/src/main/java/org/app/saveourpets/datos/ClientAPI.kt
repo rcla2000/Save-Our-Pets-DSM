@@ -3,6 +3,7 @@ package org.app.saveourpets.datos
 import org.app.saveourpets.especies.Especie
 import org.app.saveourpets.vacunas.Vacuna
 import org.app.saveourpets.razas.Raza
+import org.app.saveourpets.usuarios.Usuario
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -11,6 +12,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ClientAPI {
+
+    @POST("login")
+    fun login(@Body usuario: Usuario) : Call<Boolean>
+
+    @POST("usuarios/crear")
+    fun crearUsuario(@Body usuario: Usuario) : Call<Usuario>
+
     @GET("razas")
     fun getRazas(): Call<List<Raza>>
 

@@ -58,7 +58,7 @@ class RazasActivity : AppCompatActivity() {
         val builder = crearDialogo()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://172.16.102.107/api-save-our-pets/public/api/")
+            .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -83,9 +83,9 @@ class RazasActivity : AppCompatActivity() {
                                 intent.putExtra("id_raza", raza.id_raza)
                                 intent.putExtra("nombre", raza.nombre)
                                 intent.putExtra("id_especie", raza.id_especie)
+                                intent.putExtra("especie", raza.especie)
                                 intent.putExtra("imagen", raza.imagen)
                                 startActivity(intent)
-                                finish()
                             }
                         })
 
@@ -101,12 +101,12 @@ class RazasActivity : AppCompatActivity() {
                                                 listarRazas()
                                             } else {
                                                 val error = response.errorBody()?.string()
-                                                Toast.makeText(this@RazasActivity, resources.getString(R.string.error_eliminar_raza) + error, Toast.LENGTH_SHORT).show()
+                                                Toast.makeText(this@RazasActivity, resources.getString(R.string.error_eliminar_raza) + error, Toast.LENGTH_LONG).show()
                                             }
                                         }
 
                                         override fun onFailure(call: Call<Raza>, t: Throwable) {
-                                            Toast.makeText(this@RazasActivity, resources.getString(R.string.error_eliminar_raza) + t.message, Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(this@RazasActivity, resources.getString(R.string.error_eliminar_raza) + t.message, Toast.LENGTH_LONG).show()
                                         }
                                     })
                                 }
