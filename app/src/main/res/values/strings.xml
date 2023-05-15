@@ -125,6 +125,7 @@
     <string name="reporte_descripcion_error">Enter a physical description of the animal</string>
     <string name="reporte_direccion_error">Enter the address where the animal is located</string>
     <string name="btn_mis_reportes">My reports</string>
+    <string name="btn_adoptar">Adopt</string>
 
     <string name="error_registros">Error getting the records</string>
     <string name="error_nombre_especie">Enter the specie\'s name</string>

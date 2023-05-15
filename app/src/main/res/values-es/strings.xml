@@ -118,6 +118,7 @@
     <string name="reporte_descripcion_error">Ingrese una descripción física del animal</string>
     <string name="reporte_direccion_error">Ingrese la dirección donde se ubica el animal</string>
     <string name="btn_mis_reportes">Mis reportes</string>
+    <string name="btn_adoptar">Adoptar</string>
 
     <string name="error_nombre_especie">Ingrese el nombre de la especie</string>
     <string name="error_especie">Ocurrió un error al crear la especie</string>

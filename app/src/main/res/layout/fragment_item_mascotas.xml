@@ -85,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
-                    android:text="@string/btn_show"
+                    android:text="@string/btn_adoptar"
                     android:backgroundTint="@color/white_Default"
                     android:textColor="@color/red_Default"
                     android:textSize="12dp" />
