@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
+import org.app.saveourpets.especies.ListarEspeciesActivity
 import org.app.saveourpets.usuarios.particular.MenuParticularActivity
 import org.app.saveourpets.usuarios.particular.RegistroParticularActivity
 import org.app.saveourpets.utils.Validaciones
@@ -94,6 +95,17 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun redireccionUsuario(tipoUsuario : Int) {
+        var intent = Intent(baseContext, MenuParticularActivity::class.java)
+        if (tipoUsuario == 1) {
+            intent = Intent(baseContext, ListarEspeciesActivity::class.java)
+        } else if (tipoUsuario == 3) {
+            intent = Intent(baseContext, MenuParticularActivity::class.java)
+        }
+        startActivity(intent)
+        finish()
+    }
+
     private fun accionBtnLogin() {
         btnLogin = findViewById(R.id.btn_login)
 
@@ -120,9 +132,7 @@ class LoginActivity : AppCompatActivity() {
                                 val usuario : Usuario = login.usuario
                                 Sesion.usuario = usuario
                                 Toast.makeText(this@LoginActivity, resources.getString(R.string.login_correcto), Toast.LENGTH_SHORT).show()
-                                val intent = Intent(baseContext, MenuParticularActivity::class.java)
-                                startActivity(intent)
-                                finish()
+                                redireccionUsuario(Sesion.usuario.id_tipo)
                             } else {
                                 Toast.makeText(this@LoginActivity, resources.getString(R.string.error_login_1), Toast.LENGTH_LONG).show()
                             }
