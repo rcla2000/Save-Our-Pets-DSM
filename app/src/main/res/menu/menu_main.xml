@@ -17,4 +17,9 @@
         android:icon="@drawable/vacuna_icon"
         app:showAsAction="never">
     </item>
+    <item android:id="@+id/action_cerrar_sesion"
+        android:title="Cerrar sesión"
+        android:icon="@drawable/vacuna_icon"
+        app:showAsAction="never">
+    </item>
 </menu>

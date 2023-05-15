@@ -14,6 +14,7 @@ import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
 import org.app.saveourpets.especies.Especie
 import org.app.saveourpets.especies.ListarEspeciesActivity
+import org.app.saveourpets.usuarios.LoginActivity
 import org.app.saveourpets.utils.Validaciones
 import org.app.saveourpets.vacunas.VacunasActivity
 import retrofit2.*
@@ -185,6 +186,11 @@ class ActualizarRazaActivity : AppCompatActivity() {
             }
             R.id.action_razas -> {
                 val intent = Intent(this, RazasActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_cerrar_sesion -> {
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }

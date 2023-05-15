@@ -10,6 +10,7 @@ import android.widget.TextView
 import org.app.saveourpets.R
 import org.app.saveourpets.especies.ListarEspeciesActivity
 import org.app.saveourpets.razas.RazasActivity
+import org.app.saveourpets.usuarios.LoginActivity
 
 class DetallesVacunaActivity : AppCompatActivity() {
     private lateinit var tvVacuna : TextView
@@ -71,6 +72,11 @@ class DetallesVacunaActivity : AppCompatActivity() {
             }
             R.id.action_razas -> {
                 val intent = Intent(this, RazasActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_cerrar_sesion -> {
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
