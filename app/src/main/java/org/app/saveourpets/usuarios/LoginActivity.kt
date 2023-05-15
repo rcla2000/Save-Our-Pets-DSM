@@ -1,11 +1,28 @@
 package org.app.saveourpets.usuarios
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginResult
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
 import org.app.saveourpets.usuarios.particular.MenuParticularActivity
@@ -23,10 +40,25 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnRegistro : Button
     private lateinit var btnLogin : Button
     private lateinit var btnReporte : Button
+    private lateinit var btnGoogle : com.google.android.gms.common.SignInButton
+    //Face
+    private lateinit var auth: FirebaseAuth //referencia a objeto FirebaseAuth
+    private lateinit var btnFacebook : com.facebook.login.widget.LoginButton
+    var callbackManager: CallbackManager?=null
+    //Google
+    private lateinit var authStateListener: FirebaseAuth.AuthStateListener
+    private lateinit var googleSighInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        auth = FirebaseAuth.getInstance() //inicializar
+        callbackManager = CallbackManager.Factory.create()
+        btnFacebook = findViewById(R.id.btn_facebook)
+        btnFacebook.setReadPermissions("email")
+        btnFacebook.setOnClickListener{
+            signIn()
+        }
         accionBtnRegistro()
         accionBtnLogin()
     }
@@ -107,5 +139,71 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
+    }
+    //Face
+    private fun signIn(){
+        btnFacebook.registerCallback(callbackManager,object : FacebookCallback<LoginResult> {
+            override fun onSuccess(result: LoginResult?) {
+                handleFacebookAccessToken(result!!.accessToken)
+            }
+
+            override fun onCancel() {
+
+            }
+
+            override fun onError(error: FacebookException?) {
+                Log.d(error.toString(),error.toString())
+            }
+
+        })
+    }
+    private fun handleFacebookAccessToken(accessToken: AccessToken?){
+        val credential: AuthCredential = FacebookAuthProvider.getCredential(accessToken!!.token)
+        auth.signInWithCredential(credential).addOnFailureListener{e->
+            Toast.makeText(this,e.message,Toast.LENGTH_LONG).show()
+        }.addOnSuccessListener { result ->
+            val intent:Intent = Intent(this,MenuParticularActivity::class.java)
+            startActivity(intent)
+            val email:String?= result.user?.email
+            Toast.makeText(this,"Te logueaste con el correo:"+email,Toast.LENGTH_LONG).show()
+        }
+    }
+    //Google
+    private fun signInGoogle(){
+        val  signInIntent = googleSighInClient.signInIntent
+        launcher.launch(signInIntent)
+    }
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            result ->
+        if (result.resultCode == Activity.RESULT_OK){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            handleResults(task)
+        }
+    }
+    private fun handleResults(task: com.google.android.gms.tasks.Task<GoogleSignInAccount>){
+        if(task.isSuccessful){
+            val account: GoogleSignInAccount? = task.result
+            if (account!=null){
+                updateUI(account)
+            }
+        }else{
+            Toast.makeText(this,task.exception.toString(),Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun updateUI(account: GoogleSignInAccount){
+        val credential = GoogleAuthProvider.getCredential(account.idToken,null)
+        auth.signInWithCredential(credential).addOnCompleteListener{
+            if (it.isSuccessful){
+                //val intent:Intent = Intent(this,MainActivity::class.java)
+                //startActivity(intent)
+                Toast.makeText(this,"Se pudo",Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(this,it.exception.toString(),Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        callbackManager!!.onActivityResult(requestCode,resultCode,data)
     }
 }
