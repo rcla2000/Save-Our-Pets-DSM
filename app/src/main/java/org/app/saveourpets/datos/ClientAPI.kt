@@ -1,6 +1,7 @@
 package org.app.saveourpets.datos
 
 import org.app.saveourpets.especies.Especie
+import org.app.saveourpets.mascotas.Mascota
 import org.app.saveourpets.vacunas.Vacuna
 import org.app.saveourpets.razas.Raza
 import org.app.saveourpets.usuarios.Usuario
@@ -67,4 +68,7 @@ interface ClientAPI {
 
     @DELETE("vacunas/{id}")
     fun eliminarVacuna(@Path("id") id: Int): Call<Vacuna>
+
+    @GET("mascotas")
+    fun getMascotas(): Call<List<Mascota>>
 }

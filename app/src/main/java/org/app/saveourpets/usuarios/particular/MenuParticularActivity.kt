@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import org.app.saveourpets.R
+import org.app.saveourpets.mascotas.ListaMascotasAdoptablesActivity
 
 class MenuParticularActivity : AppCompatActivity() {
     private lateinit var btnRepotar : Button
@@ -24,6 +25,12 @@ class MenuParticularActivity : AppCompatActivity() {
 
         btnPerfil.setOnClickListener {
             val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btnAdoptar.setOnClickListener {
+            val intent = Intent(this, ListaMascotasAdoptablesActivity::class.java)
             startActivity(intent)
             finish()
         }
