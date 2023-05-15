@@ -41,7 +41,7 @@ class PerfilActivity : AppCompatActivity() {
         tvDui.text = Sesion.usuario.DUI
         tvEmail.text = Sesion.usuario.email
         tvFechaNacimiento.text = Sesion.usuario.fecha_nacimiento
-        tvDireccion.text = Sesion.usuario.fecha_nacimiento
+        tvDireccion.text = Sesion.usuario.direccion
     }
 
     private fun accionBtnEditarPerfil() {

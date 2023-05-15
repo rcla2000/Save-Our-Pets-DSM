@@ -31,19 +31,30 @@ class ActualizarPerfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_perfil)
+        cargarDatosPerfil()
         accionBtnVolver()
-        actualizarPerfil()
+        accionBtnActualizarPerfil()
     }
 
-    // Función para validar campos de entrada
-    private fun errores() : Int {
-        var errores : Int = 0
+    private fun cargarDatosPerfil() {
         edtNombres = findViewById(R.id.edt_nombres)
         edtApellidos = findViewById(R.id.edt_apellidos)
         edtTelefono = findViewById(R.id.edt_telefono)
         edtDui = findViewById(R.id.edt_dui)
         edtEmail = findViewById(R.id.edt_email)
         edtDireccion = findViewById(R.id.edt_direccion)
+
+        edtNombres.setText(Sesion.usuario.nombres)
+        edtApellidos.setText(Sesion.usuario.apellidos)
+        edtTelefono.setText(Sesion.usuario.telefono)
+        edtDui.setText(Sesion.usuario.DUI)
+        edtEmail.setText(Sesion.usuario.email)
+        edtDireccion.setText(Sesion.usuario.direccion)
+    }
+
+    // Función para validar campos de entrada
+    private fun errores() : Int {
+        var errores : Int = 0
 
         if (Validaciones.estaVacio(edtNombres.text.toString())) {
             edtNombres.error = resources.getString(R.string.error_user_nombres)
@@ -76,7 +87,7 @@ class ActualizarPerfilActivity : AppCompatActivity() {
         return errores
     }
 
-    private fun actualizarPerfil() {
+    private fun accionBtnActualizarPerfil() {
         btnActualizar = findViewById(R.id.btn_actualizar)
 
         btnActualizar.setOnClickListener {
@@ -113,7 +124,8 @@ class ActualizarPerfilActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
                         if (response.isSuccessful) {
                             Toast.makeText(baseContext, resources.getString(R.string.txt_info_actualizar_user), Toast.LENGTH_SHORT).show()
-                            val intent = Intent(baseContext, MenuParticularActivity::class.java)
+                            Sesion.usuario = response.body()!!
+                            val intent = Intent(baseContext, PerfilActivity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
@@ -133,7 +145,7 @@ class ActualizarPerfilActivity : AppCompatActivity() {
     private fun accionBtnVolver() {
         btnVolver = findViewById(R.id.btn_volver)
         btnVolver.setOnClickListener {
-            val intent = Intent(this, MenuParticularActivity::class.java)
+            val intent = Intent(this, PerfilActivity::class.java)
             startActivity(intent)
             finish()
         }
