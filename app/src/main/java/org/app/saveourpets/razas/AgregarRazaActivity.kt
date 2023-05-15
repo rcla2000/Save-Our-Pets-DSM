@@ -36,7 +36,7 @@ class AgregarRazaActivity : AppCompatActivity() {
         val nombreEspecies = mutableListOf<String>()
         spinnerIdEspecie = findViewById<Spinner>(R.id.spinnerIDEspecie)
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
+            .baseUrl("https://saveourpets.probalosv.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -79,7 +79,7 @@ class AgregarRazaActivity : AppCompatActivity() {
     private suspend fun obtenerIdEspecie(nombreEspecie : String) : Int {
         var idEspecie : Int = 0
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
+            .baseUrl("https://saveourpets.probalosv.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -105,7 +105,7 @@ class AgregarRazaActivity : AppCompatActivity() {
                 // Creando objeto raza
                 val raza = Raza(0, raza, idEspecie, "", "")
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
+                    .baseUrl("https://saveourpets.probalosv.com/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 

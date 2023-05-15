@@ -58,7 +58,7 @@ class VacunasActivity : AppCompatActivity() {
         val builder = crearDialogo()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
+            .baseUrl("https://saveourpets.probalosv.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

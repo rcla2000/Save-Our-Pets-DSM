@@ -38,7 +38,7 @@ class AgregarEspecieActivity : AppCompatActivity() {
                 val nombre = nombreEditText.text.toString()
                 val especie = Especie(0, nombre)
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("http://192.168.0.7/api-save-our-pets/public/api/")
+                    .baseUrl("https://saveourpets.probalosv.com/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
