@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
+import org.app.saveourpets.mascotas.ListaMascotasAdoptablesActivity
 import org.app.saveourpets.reportes.CrearReporteActivity
 import org.app.saveourpets.reportes.Reporte
 import org.app.saveourpets.usuarios.LoginActivity
@@ -87,11 +88,11 @@ class MisReportesActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }
-                /*R.id.action_adoptar -> {
-                    val intent = Intent(this, VacunasActivity::class.java)
+                R.id.action_adoptar -> {
+                    val intent = Intent(this, ListaMascotasAdoptablesActivity::class.java)
                     startActivity(intent)
                     finish()
-                }*/
+                }
                 R.id.action_perfil -> {
                     val intent = Intent(this, PerfilActivity::class.java)
                     startActivity(intent)

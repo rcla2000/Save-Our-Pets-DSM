@@ -13,6 +13,7 @@ import kotlinx.coroutines.withContext
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
 import org.app.saveourpets.especies.Especie
+import org.app.saveourpets.mascotas.ListaMascotasAdoptablesActivity
 import org.app.saveourpets.usuarios.LoginActivity
 import org.app.saveourpets.usuarios.Sesion
 import org.app.saveourpets.usuarios.particular.MenuParticularActivity
@@ -190,11 +191,11 @@ class CrearReporteActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }
-                /*R.id.action_adoptar -> {
-                    val intent = Intent(this, VacunasActivity::class.java)
+                R.id.action_adoptar -> {
+                    val intent = Intent(this, ListaMascotasAdoptablesActivity::class.java)
                     startActivity(intent)
                     finish()
-                }*/
+                }
                 R.id.action_perfil -> {
                     val intent = Intent(this, PerfilActivity::class.java)
                     startActivity(intent)

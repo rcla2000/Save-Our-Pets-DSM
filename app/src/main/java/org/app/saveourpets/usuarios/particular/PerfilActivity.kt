@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import org.app.saveourpets.R
+import org.app.saveourpets.especies.ListarEspeciesActivity
+import org.app.saveourpets.mascotas.ListaMascotasAdoptablesActivity
 import org.app.saveourpets.reportes.CrearReporteActivity
 import org.app.saveourpets.usuarios.LoginActivity
 import org.app.saveourpets.usuarios.Sesion
@@ -77,11 +79,11 @@ class PerfilActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-            /*R.id.action_adoptar -> {
-                val intent = Intent(this, VacunasActivity::class.java)
+            R.id.action_adoptar -> {
+                val intent = Intent(this, ListaMascotasAdoptablesActivity::class.java)
                 startActivity(intent)
                 finish()
-            }*/
+            }
             R.id.action_perfil -> {
                 val intent = Intent(this, PerfilActivity::class.java)
                 startActivity(intent)

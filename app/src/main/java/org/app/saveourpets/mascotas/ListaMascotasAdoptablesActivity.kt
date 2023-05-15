@@ -15,7 +15,9 @@ import org.app.saveourpets.especies.MascotasAdapter
 import org.app.saveourpets.mascotas.DetallesMascotaActivity
 import org.app.saveourpets.mascotas.Mascota
 import org.app.saveourpets.razas.RazasActivity
+import org.app.saveourpets.reportes.CrearReporteActivity
 import org.app.saveourpets.usuarios.LoginActivity
+import org.app.saveourpets.usuarios.particular.PerfilActivity
 import org.app.saveourpets.vacunas.VacunasActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -89,4 +91,34 @@ class ListaMascotasAdoptablesActivity : AppCompatActivity() {
         return mascotas.filter { it.estado == "Rescatado" || it.id_estado == 1 }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_usuario, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_reportar -> {
+                val intent = Intent(this, CrearReporteActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_adoptar -> {
+                val intent = Intent(this, ListaMascotasAdoptablesActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_perfil -> {
+                val intent = Intent(this, PerfilActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_cerrar_sesion -> {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
