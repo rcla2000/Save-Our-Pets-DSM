@@ -7,14 +7,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import org.app.saveourpets.R
-import org.app.saveourpets.especies.ListarEspeciesActivity
-import org.app.saveourpets.razas.RazasActivity
 import org.app.saveourpets.reportes.CrearReporteActivity
 import org.app.saveourpets.usuarios.LoginActivity
-import org.app.saveourpets.vacunas.VacunasActivity
+import org.app.saveourpets.mascotas.ListaMascotasAdoptablesActivity
 
 class MenuParticularActivity : AppCompatActivity() {
-    private lateinit var btnRepotar : Button
+    private lateinit var btnReportar : Button
     private lateinit var btnAdoptar : Button
     private lateinit var btnPerfil : Button
 
@@ -27,7 +25,7 @@ class MenuParticularActivity : AppCompatActivity() {
     private fun acciones() {
         btnPerfil = findViewById(R.id.btn_perfil)
         btnAdoptar = findViewById(R.id.btn_adoptar)
-        btnRepotar = findViewById(R.id.btn_reportar)
+        btnReportar = findViewById(R.id.btn_reportar)
 
         btnPerfil.setOnClickListener {
             val intent = Intent(this, PerfilActivity::class.java)
@@ -35,8 +33,13 @@ class MenuParticularActivity : AppCompatActivity() {
             finish()
         }
 
-        btnRepotar.setOnClickListener {
+        btnReportar.setOnClickListener {
             val intent = Intent(this, CrearReporteActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        btnAdoptar.setOnClickListener {
+            val intent = Intent(this, ListaMascotasAdoptablesActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -19,10 +19,17 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".usuarios.particular.MisReportesActivity"
             android:exported="false" />
         <activity
             android:name=".reportes.CrearReporteActivity"
+=======
+            android:name=".mascotas.DetallesMascotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mascotas.ListaMascotasAdoptablesActivity"
+>>>>>>> ernesto
             android:exported="false" />
         <activity
             android:name=".usuarios.particular.MenuParticularActivity"

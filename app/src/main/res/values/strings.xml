@@ -141,4 +141,7 @@
     <string name="txt_no">No</string>
     <string name="txt_confirmacion">Confirmation</string>
     <string name="pregunta_eliminar">Are you sure do you want to delete this register ?</string>
+
+    <!-- Mascotas -->
+    <string name="btn_show">View</string>
 </resources>

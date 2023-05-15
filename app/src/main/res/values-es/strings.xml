@@ -131,4 +131,6 @@
     <string name="txt_no">No</string>
     <string name="txt_confirmacion">Confirmación</string>
     <string name="pregunta_eliminar">¿Estás seguro que deseas eliminar este registro?</string>
+    <!-- Mascotas -->
+    <string name="btn_show">Mostrar</string>
 </resources>
