@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".usuarios.particular.MisReportesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reportes.CrearReporteActivity"
+            android:exported="false" />
+        <activity
             android:name=".usuarios.particular.MenuParticularActivity"
             android:exported="false" />
         <activity

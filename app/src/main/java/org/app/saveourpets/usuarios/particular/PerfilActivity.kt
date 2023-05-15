@@ -3,9 +3,13 @@ package org.app.saveourpets.usuarios.particular
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import org.app.saveourpets.R
+import org.app.saveourpets.reportes.CrearReporteActivity
+import org.app.saveourpets.usuarios.LoginActivity
 import org.app.saveourpets.usuarios.Sesion
 
 class PerfilActivity : AppCompatActivity() {
@@ -59,5 +63,36 @@ class PerfilActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_usuario, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_reportar -> {
+                val intent = Intent(this, CrearReporteActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            /*R.id.action_adoptar -> {
+                val intent = Intent(this, VacunasActivity::class.java)
+                startActivity(intent)
+                finish()
+            }*/
+            R.id.action_perfil -> {
+                val intent = Intent(this, PerfilActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_cerrar_sesion -> {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -3,7 +3,6 @@
     <string name="app_name">Save Our Pets</string>
     <string name="btnPrueba">1 English</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="iniciarSesion">Log In</string>
     <string name="btnLogin">Log In</string>
     <string name="btnFacebook">Continue with Facebook</string>
@@ -22,6 +21,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -30,6 +30,10 @@
     <string name="menu_species">Species</string>
     <string name="menu_razas">Races</string>
     <string name="menu_vacunas">Vaccines</string>
+    <string name="menu_cerrar_sesion">Log Out</string>
+    <string name="menu_perfil">My profile</string>
+    <string name="menu_adoptar">Adopt a pet</string>
+    <string name="menu_reportar">Pet report</string>
 
     <string name="facebook_app_id">188034237374789</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
@@ -106,6 +110,21 @@
     <string name="error_login_1">Error login. Please verify your password</string>
     <string name="error_login_2">Your email address doesn\'t exist in our records</string>
     <string name="error_login_3">An unexpected error occurred while logging in</string>
+
+    <!-- Strings para reportes -->
+    <string name="reporte_titulo">Pet report</string>
+    <string name="reporte_descripcion">Description</string>
+    <string name="reporte_direccion">Address</string>
+    <string name="reporte_foto">Take a photo</string>
+    <string name="reporte_latitud">Latitude</string>
+    <string name="reporte_longitud">Longitude</string>
+    <string name="reporte_usuario">Reported by</string>
+    <string name="btn_reportar">Report</string>
+    <string name="reporte_ok">Your report has been sent successfully</string>
+    <string name="reporte_error">An error occurred while sending the report</string>
+    <string name="reporte_descripcion_error">Enter a physical description of the animal</string>
+    <string name="reporte_direccion_error">Enter the address where the animal is located</string>
+    <string name="btn_mis_reportes">My reports</string>
 
     <string name="error_registros">Error getting the records</string>
     <string name="error_nombre_especie">Enter the specie\'s name</string>

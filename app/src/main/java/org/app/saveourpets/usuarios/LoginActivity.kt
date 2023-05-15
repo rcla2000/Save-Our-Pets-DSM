@@ -26,6 +26,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import org.app.saveourpets.R
 import org.app.saveourpets.datos.ClientAPI
 import org.app.saveourpets.especies.ListarEspeciesActivity
+import org.app.saveourpets.reportes.CrearReporteActivity
 import org.app.saveourpets.usuarios.particular.MenuParticularActivity
 import org.app.saveourpets.usuarios.particular.RegistroParticularActivity
 import org.app.saveourpets.utils.Validaciones
@@ -62,6 +63,29 @@ class LoginActivity : AppCompatActivity() {
         }
         accionBtnRegistro()
         accionBtnLogin()
+        accionBtnReporte()
+    }
+
+    private fun accionBtnReporte() {
+        btnReporte = findViewById(R.id.btn_reporte)
+        btnReporte.setOnClickListener {
+            val anonimo : Usuario = Usuario(
+                23,
+                3,
+                "Anónimo",
+                "Anónimo",
+                "anonimo@gmail.com",
+                "22222222",
+                "11111111-1",
+                "No especificada",
+                "0000-00-00",
+                "anonimo"
+            )
+            Sesion.usuario = anonimo
+            val intent = Intent(this, CrearReporteActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     // Función para validar los campos de entrada

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <item android:id="@+id/action_especies"
-        android:title="@string/menu_species"
+    <item android:id="@+id/action_reportar"
+        android:title="@string/menu_reportar"
         android:icon="@drawable/species_icon"
         app:showAsAction="never">
     </item>
-    <item android:id="@+id/action_razas"
-        android:title="@string/menu_razas"
+    <item android:id="@+id/action_adoptar"
+        android:title="@string/menu_adoptar"
         android:icon="@drawable/vacuna_icon"
         app:showAsAction="never">
     </item>
-    <item android:id="@+id/action_vacunas"
-        android:title="@string/menu_vacunas"
+    <item android:id="@+id/action_perfil"
+        android:title="@string/menu_perfil"
         android:icon="@drawable/vacuna_icon"
         app:showAsAction="never">
     </item>

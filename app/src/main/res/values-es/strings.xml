@@ -19,6 +19,10 @@
     <string name="menu_species">Especies</string>
     <string name="menu_razas">Razas</string>
     <string name="menu_vacunas">Vacunas</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
+    <string name="menu_perfil">Mi perfil</string>
+    <string name="menu_adoptar">Adoptar mascota</string>
+    <string name="menu_reportar">Reportar mascota</string>
     <string name="btnFacebook">Continuar con Facebook</string>
     <string name="facebook_app_id">188034237374789</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
@@ -99,6 +103,21 @@
     <string name="error_login_1">Contraseña incorrecta</string>
     <string name="error_login_2">El email ingresado no existe en nuestros registros</string>
     <string name="error_login_3">Ocurrió un error inesperado al iniciar sesión</string>
+
+    <!-- Strings para reportes -->
+    <string name="reporte_titulo">Reportar mascota</string>
+    <string name="reporte_descripcion">Descripción</string>
+    <string name="reporte_direccion">Dirección</string>
+    <string name="reporte_foto">Tomar fotografía</string>
+    <string name="reporte_latitud">Latitud</string>
+    <string name="reporte_longitud">Longitud</string>
+    <string name="reporte_usuario">Reportado por</string>
+    <string name="btn_reportar">Reportar</string>
+    <string name="reporte_ok">Su reporte ha sido enviado con éxito</string>
+    <string name="reporte_error">Ocurrió un error al enviar el reporte</string>
+    <string name="reporte_descripcion_error">Ingrese una descripción física del animal</string>
+    <string name="reporte_direccion_error">Ingrese la dirección donde se ubica el animal</string>
+    <string name="btn_mis_reportes">Mis reportes</string>
 
     <string name="error_nombre_especie">Ingrese el nombre de la especie</string>
     <string name="error_especie">Ocurrió un error al crear la especie</string>

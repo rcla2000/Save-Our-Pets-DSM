@@ -3,6 +3,7 @@ package org.app.saveourpets.datos
 import org.app.saveourpets.especies.Especie
 import org.app.saveourpets.vacunas.Vacuna
 import org.app.saveourpets.razas.Raza
+import org.app.saveourpets.reportes.Reporte
 import org.app.saveourpets.usuarios.Usuario
 import org.app.saveourpets.usuarios.Login
 import retrofit2.Call
@@ -37,6 +38,15 @@ interface ClientAPI {
 
     @DELETE("razas/{id}")
     fun eliminarRaza(@Path("id") id: Int): Call<Raza>
+
+    @GET("reportes")
+    fun getReportes(): Call<List<Reporte>>
+
+    @GET("reportes/usuario/{id}")
+    fun getReportesUsuario(@Path("id") id: Int): Call<List<Reporte>>
+
+    @POST("reportes/crear")
+    fun crearReporte(@Body reporte: Reporte) : Call<Reporte>
 
     @GET("especies")
     fun getEspecies(): Call<List<Especie>>
